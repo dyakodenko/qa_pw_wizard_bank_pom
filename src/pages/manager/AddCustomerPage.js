@@ -31,8 +31,4 @@ export class AddCustomerPage {
     await this.page.getByRole('form').getByRole('button', { name: 'Add Customer' }).click();
   }
 
-  async clickCustomersButtom() {
-    await this.page.getByRole('button', { name: 'Customers' }).click();
-  }
-
 }

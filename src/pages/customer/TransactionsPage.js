@@ -20,11 +20,11 @@ export class TransactionsPage {
   }
 
   async assertFirstRowAmountContainsText(amount) {
-    await expect(this.firstRowAmountCell).toContainText(amount);
+    await expect(this.firstRowAmountCell).toContainText(amount, {timeout: 2000});
   }
 
   async assertFirstRowTypeContainsText(type) {
-    await expect(this.firstRowTypeCell).toContainText(type);
+    await expect(this.firstRowTypeCell).toContainText(type, {timeout: 2000});
   }
 
   async assertFirstRowIsHidden() {

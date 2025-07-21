@@ -33,12 +33,13 @@ test('Assert manager can delete customer', async ({ page }) => {
   // Test:
   // 1. Open Customers page.
   await customerListPage.open();
-  await customerListPage.assertCustomerExist(firstName);
+  await customerListPage.assertCustomerExist(firstName, lastName);
   // 2. Click [Delete] for the row with customer name.
   await customerListPage.clickDeleteButtonForUser(firstName);
   // 3. Assert customer row is not present in the table. 
   await customerListPage.assertCustomerDoesNotExist(firstName);
   // 4. Reload the page.
+  await customerListPage.reload();
   // 5. Assert customer row is not present in the table. 
   
 });

@@ -2,6 +2,7 @@ import { test } from '@playwright/test';
 import { faker } from '@faker-js/faker';
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage';
 import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage';
+import { BankManagerMainPage } from '../../../src/pages/manager/BankManagerMainPage';
 
 test('Assert manager can add new customer', async ({ page }) => {
   /* 
@@ -16,6 +17,8 @@ test('Assert manager can add new customer', async ({ page }) => {
   */
   const addCustomerPage = new AddCustomerPage(page);
   const customerListPage = new CustomersListPage(page);
+  const bankManagerMainPage = new BankManagerMainPage(page);
+
 
   const firstName = faker.person.firstName();
   const lastName = faker.person.lastName();
@@ -24,7 +27,6 @@ test('Assert manager can add new customer', async ({ page }) => {
   // 1. Open add customer page by link
   // https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust
   await addCustomerPage.open();
-
   // 2. Fill the First Name.
   await addCustomerPage.fillFirstName(firstName);
   // 3. Fill the Last Name.
@@ -36,7 +38,7 @@ test('Assert manager can add new customer', async ({ page }) => {
   // 6. Reload the page (This is a simplified step to close the popup)
   await addCustomerPage.reload();
   // 7. Click [Customers] button.
-  await addCustomerPage.clickCustomersButtom();
+  await bankManagerMainPage.clickCustomersButton();
   // 8. Assert the customer First Name is present in the table in the last row. 
   await customerListPage.assertCustomerFirstName(firstName);
   // 9. Assert the customer Last Name is present in the table in the last row. 

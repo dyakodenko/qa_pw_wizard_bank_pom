@@ -25,4 +25,8 @@ export class BankHomePage {
     await expect(getButton).toBeVisible();
   }
 
+  async clickHomeButton() {
+    await this.page.getByRole('button', { name: 'Home' }).click()
+  }
+
 }
