@@ -57,7 +57,7 @@ test('Assert manager can add new customer', async ({ page }) => {
   await openAccountPage.reload();
   await bankManagerMainPage.clickCustomersButton();
   await customerListPage.assertCustomerExist(firstName, lastName);
-  await customerListPage.assertAccountNumberIsNotEmpty()
+  await customerListPage.assertAccountNumberIsNotEmpty();
 
   await page.waitForTimeout(1000);
 

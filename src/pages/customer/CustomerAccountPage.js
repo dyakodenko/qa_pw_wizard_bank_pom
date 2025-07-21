@@ -79,6 +79,6 @@ export class CustomerAccountPage {
   }
 
   async clickAddCustomerButton() {
-    await this.page.getByRole('form').getByRole('button', { name: 'Add Customer' })
+    await this.page.getByRole('form').getByRole('button', { name: 'Add Customer' });
   }
 }

@@ -17,7 +17,7 @@ export class BankHomePage {
   }
 
   async clickBankManagerLogin() {
-    await this.page.getByRole('button', { name: 'Bank Manager Login' }).click()
+    await this.page.getByRole('button', { name: 'Bank Manager Login' }).click();
   }
 
   async assertAddButtonExists(buttonName) {
@@ -26,7 +26,7 @@ export class BankHomePage {
   }
 
   async clickHomeButton() {
-    await this.page.getByRole('button', { name: 'Home' }).click()
+    await this.page.getByRole('button', { name: 'Home' }).click();
   }
 
 }

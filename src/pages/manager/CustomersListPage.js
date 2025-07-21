@@ -3,7 +3,7 @@ import { expect } from '@playwright/test';
 export class CustomersListPage {
   constructor(page) {
     this.page = page;
-    this.lastRow = page.getByRole('row').last()
+    this.lastRow = page.getByRole('row').last();
     this.customerRow = page.getByRole('row');
     this.searchCustomerField = page.getByPlaceholder('Search Customer');
   }

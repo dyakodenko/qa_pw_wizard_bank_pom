@@ -3,7 +3,7 @@ import { faker } from '@faker-js/faker';
 import { BankHomePage } from '../../../src/pages/BankHomePage';
 import { BankManagerMainPage } from '../../../src/pages/manager/BankManagerMainPage';
 import { AddCustomerPage } from '../../../src/pages/manager/AddCustomerPage';
-import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage'
+import { OpenAccountPage } from '../../../src/pages/manager/OpenAccountPage';
 import { CustomersListPage } from '../../../src/pages/manager/CustomersListPage';
 import { CustomerLoginPage } from '../../../src/pages/customer/CustomerLoginPage';
 import { CustomerAccountPage } from '../../../src/pages/customer/CustomerAccountPage';
@@ -41,12 +41,13 @@ test('Added customer can login', async ({ page }) => {
     //6. Go to customers list and check that new customer has Account Number
     await bankManagerMainPage.clickCustomersButton();
     await customersListPage.assertCustomerExist(firstName, lastName);
-    await customersListPage.assertAccountNumberIsNotEmpty()
+    await customersListPage.assertAccountNumberIsNotEmpty();
     //7. Go to Home page and login under new customer
-    await bankHomePage.clickHomeButton()
+    await bankHomePage.clickHomeButton();
     await bankHomePage.clickCustomerLoginButton();
     await customerLoginPage.selectCustomer(`${firstName} ${lastName}`);
     await customerLoginPage.clickLoginButton();
     await customerAccountPage.assertAccountLineContainsText(`${firstName} ${lastName}`);
+    
 
 })
